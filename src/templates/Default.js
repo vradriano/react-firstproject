@@ -18,9 +18,9 @@ const Default = ({ children }) => {
   return (
     <>
     <Header />
-    <Container className={classes.container}>
-    {children}
-    </Container>
+      <Container className={classes.container}>
+      {children}
+      </Container>
   </>
   )
 }
