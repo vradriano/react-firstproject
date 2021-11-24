@@ -32,7 +32,8 @@ const CustomerCard = ({
   email,
   avatar,
   className,
-  onRemoveCustomer
+  onRemoveCustomer,
+  onEditCustomer
 }) => {
   const classes = useStyles()
 
@@ -47,9 +48,13 @@ const CustomerCard = ({
     handleToggleOpenModal()
   }
 
-  const HandleRemoveCustomer = () => {
+  const handleRemoverCustomer = () => {
     handleToggleOpenModal()
   }
+
+  const handleEditCustomer = id => {
+    onEditCustomer(id)
+  } 
 
   return (
     <>
@@ -64,10 +69,10 @@ const CustomerCard = ({
         subheader={`${email}`}
       />
       <CardActions disableSpacing>
-        <IconButton aria-label="Editar Clientes">
+        <IconButton aria-label="Editar Clientes" onClick={() => handleEditCustomer(id)}>
           <EditIcon />
         </IconButton>
-        <IconButton aria-label="Remover Cadastro" onClick={HandleRemoveCustomer }>
+        <IconButton aria-label="Remover Cadastro" onClick={handleRemoverCustomer}>
           <DeleteForeverIcon />
         </IconButton>
       </CardActions>
