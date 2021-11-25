@@ -32,7 +32,7 @@ const CustomerCard = ({
   email,
   avatar,
   className,
-  onRemoveCustomer,
+  onRemoveCustomer, 
   onEditCustomer
 }) => {
   const classes = useStyles()
